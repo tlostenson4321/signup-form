@@ -36,10 +36,12 @@ app.get('/users', user.list);
 
 app.post('/formsubmit', function(req,res){
 	res.redirect('/success')
+});
+app.get('/success', function(req, res){
 	res.header('Content-Type', 'text/plain')
 	res.send('Success!')
-});
- 
+	
+}) 
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
